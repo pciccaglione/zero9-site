@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply h-full;
+  }
+  
+  body {
+    @apply m-0 bg-black text-white font-mono antialiased;
+  }
+}
+
+/* Custom system text styling */
+.system-text {
+  @apply uppercase tracking-wide2 font-mono;
+}
+
+/* Terminal cursor animation */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+/* Smooth transitions */
+.transition-opacity-600 {
+  transition: opacity 600ms ease;
+}
+
+.transition-opacity-450 {
+  transition: opacity 450ms ease;
+}
