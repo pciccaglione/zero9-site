@@ -67,6 +67,12 @@ export default function Home() {
               </div>
               <div className="flex gap-6">
                 <a 
+                  href="/logs" 
+                  className="system-text text-steel/60 hover:text-steel text-xs transition-colors"
+                >
+                  LOGS
+                </a>
+                <a 
                   href="/legal/privacy" 
                   className="system-text text-steel/60 hover:text-steel text-xs transition-colors"
                 >
