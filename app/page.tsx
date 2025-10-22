@@ -24,13 +24,12 @@ export default function Home() {
 
   return (
     <>
-      {showTerminal && (
+      {showTerminal ? (
         <TerminalBoot onComplete={handleComplete} />
-      )}
-      
-      <main className={`${showTerminal ? 'opacity-0' : 'opacity-100'} transition-opacity-600`}>
-        {/* Hero Section */}
-        <RitualHero />
+      ) : (
+        <main>
+          {/* Hero Section */}
+          <RitualHero />
 
         {/* Product Units Section */}
         <section className="bg-black py-20 sm:py-28 px-4">
@@ -113,7 +112,8 @@ export default function Home() {
             </div>
           </div>
         </footer>
-      </main>
+        </main>
+      )}
     </>
   );
 }
