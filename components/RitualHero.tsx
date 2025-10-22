@@ -1,22 +1,14 @@
 "use client";
 
 import { COPY } from "@/lib/copy";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function RitualHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Detect mobile device
-    setIsMobile(window.innerWidth < 768);
-
-    // Optimize video playback on mobile
-    if (videoRef.current && window.innerWidth < 768) {
-      // Reduce video quality on mobile by loading at lower resolution if available
-      videoRef.current.playbackRate = 1;
-      
-      // Ensure video plays on mobile (iOS requires user interaction, but muted autoplay works)
+    // Ensure video plays on mobile (iOS requires user interaction, but muted autoplay works)
+    if (videoRef.current) {
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
@@ -36,16 +28,10 @@ export default function RitualHero() {
         loop
         muted
         playsInline
-        preload={isMobile ? "metadata" : "auto"}
+        preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
-        poster="/video/hero-poster.jpg"
       >
-        {/* Mobile-optimized video (lower resolution) */}
-        {isMobile ? (
-          <source src="/video/hero-mobile.mp4" type="video/mp4" />
-        ) : (
-          <source src="/video/hero.mp4" type="video/mp4" />
-        )}
+        <source src="/video/hero.mp4" type="video/mp4" />
         <track kind="captions" srcLang="en" label="pre-dawn road; breath; asphalt" />
       </video>
 
