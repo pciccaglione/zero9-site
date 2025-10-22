@@ -52,7 +52,13 @@ function LogsContent() {
   return (
     <main className="min-h-screen bg-black">
       {/* Header */}
-      <header className="border-b border-graphite py-8 px-4 sm:px-8">
+      <header className="border-b border-graphite py-8 px-4 sm:px-8 relative">
+        <a 
+          href="/"
+          className="absolute top-4 left-4 text-[12px] tracking-[0.04em] bg-black/40 px-2 py-1 border border-white/10 hover:border-white/30 transition-colors system-text text-white/80 hover:text-white"
+        >
+          0/9_SYSTEM
+        </a>
         <div className="max-w-7xl mx-auto">
           <h1 className="system-text text-white text-sm sm:text-base">
             0/9_SYSTEM / LOG_ARCHIVE
