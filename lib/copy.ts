@@ -15,8 +15,7 @@ export const COPY = {
     "0/9 was born in the hours before sunrise — for those who train while the world sleeps.",
     "For the ones who build strength in silence and channel aggression into discipline.",
     "There is no noise here. No spectacle.",
-    "Only the ritual.",
-    "Silently Violent."
+    "Only the ritual."
   ],
   units: {
     1: {
