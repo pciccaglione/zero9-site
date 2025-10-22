@@ -80,6 +80,12 @@ export default function Home() {
               </div>
               <div className="flex gap-6">
                 <a 
+                  href="/access" 
+                  className="system-text text-steel/60 hover:text-steel text-xs transition-colors"
+                >
+                  ACCESS : REQUEST
+                </a>
+                <a 
                   href="/logs" 
                   className="system-text text-steel/60 hover:text-steel text-xs transition-colors"
                 >
