@@ -21,6 +21,14 @@ export default function RitualHero() {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
+      {/* System Link */}
+      <a 
+        href="/"
+        className="absolute top-4 left-4 z-10 text-[12px] tracking-[0.04em] bg-black/40 px-2 py-1 border border-white/10 hover:border-white/30 transition-colors system-text text-white/80 hover:text-white"
+      >
+        0/9_SYSTEM
+      </a>
+
       {/* Video Background */}
       <video
         ref={videoRef}

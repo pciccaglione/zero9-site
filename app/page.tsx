@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TerminalBoot from "@/components/TerminalBoot";
 import RitualHero from "@/components/RitualHero";
 import UnitCard from "@/components/UnitCard";
@@ -9,10 +9,23 @@ import { COPY } from "@/lib/copy";
 export default function Home() {
   const [showTerminal, setShowTerminal] = useState(true);
 
+  useEffect(() => {
+    // Check if user has already entered in this session
+    const hasEntered = sessionStorage.getItem("zero9_entered");
+    if (hasEntered) {
+      setShowTerminal(false);
+    }
+  }, []);
+
+  const handleComplete = () => {
+    sessionStorage.setItem("zero9_entered", "true");
+    setShowTerminal(false);
+  };
+
   return (
     <>
       {showTerminal && (
-        <TerminalBoot onComplete={() => setShowTerminal(false)} />
+        <TerminalBoot onComplete={handleComplete} />
       )}
       
       <main className={`${showTerminal ? 'opacity-0' : 'opacity-100'} transition-opacity-600`}>
