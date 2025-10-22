@@ -7,8 +7,9 @@ export default function RitualHero() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Ensure video plays on mobile (iOS requires user interaction, but muted autoplay works)
+    // Reset video to beginning and play when component mounts
     if (videoRef.current) {
+      videoRef.current.currentTime = 0;
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
         playPromise.catch(() => {
@@ -32,7 +33,6 @@ export default function RitualHero() {
       {/* Video Background */}
       <video
         ref={videoRef}
-        autoPlay
         loop
         muted
         playsInline
